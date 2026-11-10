@@ -1,0 +1,26 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Stazione idrometrica",
+        "description": "Scegli la stazione della rete Emilia-Romagna (Allerta Meteo).",
+        "data": { "station_id": "Stazione" }
+      }
+    },
+    "error": { "cannot_connect": "Impossibile contattare il servizio Allerta Meteo ER" },
+    "abort": { "already_configured": "Stazione già configurata" }
+  },
+  "entity": {
+    "sensor": {
+      "level": { "name": "Livello" },
+      "trend": { "name": "Tendenza" },
+      "alert_level": { "name": "Livello di allerta" },
+      "last_measure": { "name": "Ultima misura" }
+    },
+    "binary_sensor": {
+      "threshold_1_exceeded": { "name": "Soglia 1 superata (gialla)" },
+      "threshold_2_exceeded": { "name": "Soglia 2 superata (arancione)" },
+      "threshold_3_exceeded": { "name": "Soglia 3 superata (rossa)" }
+    }
+  }
+}

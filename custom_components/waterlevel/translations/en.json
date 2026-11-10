@@ -1,0 +1,26 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Hydrometric station",
+        "description": "Pick a station from the Emilia-Romagna network (Allerta Meteo).",
+        "data": { "station_id": "Station" }
+      }
+    },
+    "error": { "cannot_connect": "Cannot reach the Allerta Meteo ER service" },
+    "abort": { "already_configured": "Station already configured" }
+  },
+  "entity": {
+    "sensor": {
+      "level": { "name": "Level" },
+      "trend": { "name": "Trend" },
+      "alert_level": { "name": "Alert level" },
+      "last_measure": { "name": "Last measurement" }
+    },
+    "binary_sensor": {
+      "threshold_1_exceeded": { "name": "Threshold 1 exceeded (yellow)" },
+      "threshold_2_exceeded": { "name": "Threshold 2 exceeded (orange)" },
+      "threshold_3_exceeded": { "name": "Threshold 3 exceeded (red)" }
+    }
+  }
+}

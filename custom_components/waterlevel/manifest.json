@@ -1,0 +1,12 @@
+{
+  "domain": "waterlevel",
+  "name": "Livello Idrometrico Emilia-Romagna",
+  "codeowners": ["@monkeystales"],
+  "config_flow": true,
+  "documentation": "https://github.com/monkeystales/waterlevel",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/monkeystales/waterlevel/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
