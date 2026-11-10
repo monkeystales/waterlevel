@@ -16,6 +16,7 @@ Livello Idrometrico Emilia-Romagna* e scegli la stazione (default: **Gandazzolo 
 | `sensor.<stazione>_livello_di_allerta` | 0 = nessuna soglia, 1/2/3 = gialla/arancione/rossa |
 | `binary_sensor.<stazione>_soglia_N_superata` | `on` se la soglia N è superata |
 | `sensor.<stazione>_soglia_N_...` | Valore in m delle soglie 1/2/3 (diagnostica); `unknown` se non definita |
+| `device_tracker.<stazione>_posizione` | Posizione della stazione; compare nella mappa di Home Assistant (pannello *Mappa* e card `map`) |
 | `sensor.<stazione>_ultima_misura` | Timestamp dell'ultima misura (disabilitato di default) |
 
 Se i dati sono assenti o più vecchi di 3 ore le entità diventano `unavailable`.
@@ -84,7 +85,7 @@ disponibile, gli altri sono le stazioni.
 | `nomestaz` | Nome della stazione. |
 | `value` | Livello in metri (quota idrometrica); `null` se non c'è misura per lo slot richiesto. |
 | `soglia1/2/3` | Soglie di allerta in metri (gialla, arancione, rossa); `0` se non definite. |
-| `lon`, `lat` | Coordinate in metri (proiezione UTM, non usate dall'integrazione). |
+| `lon`, `lat` | Coordinate in gradi moltiplicati per 100000 (es. `1162491` = 11,62491° E); usate per l'entità di posizione. |
 | `precedente`, `ordinamento` | Campi interni del sito, non usati. |
 
 **Comportamento dell'integrazione**

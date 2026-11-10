@@ -20,6 +20,9 @@
       "threshold_2": { "name": "Threshold 2 (orange)" },
       "threshold_3": { "name": "Threshold 3 (red)" }
     },
+    "device_tracker": {
+      "location": { "name": "Location" }
+    },
     "binary_sensor": {
       "threshold_1_exceeded": { "name": "Threshold 1 exceeded (yellow)" },
       "threshold_2_exceeded": { "name": "Threshold 2 exceeded (orange)" },

@@ -28,6 +28,8 @@ class StationData:
     threshold_2: float
     threshold_3: float
     trend_m_h: float | None
+    latitude: float | None = None
+    longitude: float | None = None
 
     @property
     def alert_level(self) -> int:
@@ -87,4 +89,14 @@ class WaterLevelCoordinator(DataUpdateCoordinator[StationData]):
             threshold_2=float(st.get("soglia2") or 0),
             threshold_3=float(st.get("soglia3") or 0),
             trend_m_h=trend,
+            latitude=_coord(st.get("lat")),
+            longitude=_coord(st.get("lon")),
         )
+
+
+def _coord(raw) -> float | None:
+    """Le coordinate dell'API sono gradi * 100000 (es. 1162491 -> 11.62491)."""
+    try:
+        return round(int(raw) / 100000, 5)
+    except (TypeError, ValueError):
+        return None
