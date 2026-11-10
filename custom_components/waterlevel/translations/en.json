@@ -15,7 +15,10 @@
       "level": { "name": "Level" },
       "trend": { "name": "Trend" },
       "alert_level": { "name": "Alert level" },
-      "last_measure": { "name": "Last measurement" }
+      "last_measure": { "name": "Last measurement" },
+      "threshold_1": { "name": "Threshold 1 (yellow)" },
+      "threshold_2": { "name": "Threshold 2 (orange)" },
+      "threshold_3": { "name": "Threshold 3 (red)" }
     },
     "binary_sensor": {
       "threshold_1_exceeded": { "name": "Threshold 1 exceeded (yellow)" },

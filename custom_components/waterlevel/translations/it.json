@@ -15,7 +15,10 @@
       "level": { "name": "Livello" },
       "trend": { "name": "Tendenza" },
       "alert_level": { "name": "Livello di allerta" },
-      "last_measure": { "name": "Ultima misura" }
+      "last_measure": { "name": "Ultima misura" },
+      "threshold_1": { "name": "Soglia 1 (gialla)" },
+      "threshold_2": { "name": "Soglia 2 (arancione)" },
+      "threshold_3": { "name": "Soglia 3 (rossa)" }
     },
     "binary_sensor": {
       "threshold_1_exceeded": { "name": "Soglia 1 superata (gialla)" },

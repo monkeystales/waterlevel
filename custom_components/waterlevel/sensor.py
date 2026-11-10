@@ -10,6 +10,7 @@ from homeassistant.components.sensor import (
 )
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
@@ -26,8 +27,27 @@ async def async_setup_entry(
             TrendSensor(c),
             AlertLevelSensor(c),
             LastMeasureSensor(c),
+            *[ThresholdSensor(c, n) for n in (1, 2, 3)],
         ]
     )
+
+
+class ThresholdSensor(WaterLevelEntity, SensorEntity):
+    """Valore della soglia N (m), definito dalla Regione per la stazione."""
+
+    _attr_native_unit_of_measurement = "m"
+    _attr_device_class = SensorDeviceClass.DISTANCE
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
+    _attr_suggested_display_precision = 2
+
+    def __init__(self, coordinator, number: int) -> None:
+        super().__init__(coordinator, f"threshold_{number}")
+        self._number = number
+
+    @property
+    def native_value(self) -> float | None:
+        value = getattr(self.coordinator.data, f"threshold_{self._number}")
+        return value or None  # 0 = soglia non definita
 
 
 class LevelSensor(WaterLevelEntity, SensorEntity):

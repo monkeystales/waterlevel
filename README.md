@@ -15,6 +15,7 @@ Livello Idrometrico Emilia-Romagna* e scegli la stazione (default: **Gandazzolo 
 | `sensor.<stazione>_tendenza` | Variazione in m/h sugli ultimi ~90 min |
 | `sensor.<stazione>_livello_di_allerta` | 0 = nessuna soglia, 1/2/3 = gialla/arancione/rossa |
 | `binary_sensor.<stazione>_soglia_N_superata` | `on` se la soglia N è superata |
+| `sensor.<stazione>_soglia_N_...` | Valore in m delle soglie 1/2/3 (diagnostica); `unknown` se non definita |
 | `sensor.<stazione>_ultima_misura` | Timestamp dell'ultima misura (disabilitato di default) |
 
 Se i dati sono assenti o più vecchi di 3 ore le entità diventano `unavailable`.
